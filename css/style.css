@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #88B44E;
+    --primary: #9AB9FD;
     --secondary: #FB9F38;
     --light: #F5F8F2;
     --dark: #252C30;
@@ -33,6 +33,7 @@
     visibility: hidden;
     transition: opacity .5s ease-out, visibility 0s linear .5s;
     z-index: 99999;
+    color: var(--primary);
 }
 
 #spinner.show {
@@ -167,7 +168,9 @@
     bottom: 0;
     display: flex;
     align-items: center;
-    background: rgba(136, 180, 78, .7);
+    /* background:  #B4E3E3; */
+        /* background: rgba(136, 180, 78, .7); */
+    background: rgba(180, 227, 227, 0.7);
     z-index: 1;
 }
 
@@ -255,7 +258,7 @@
 
 /*** Products ***/
 .product {
-    background: linear-gradient(rgba(136, 180, 78, .1), rgba(136, 180, 78, .1)), url(../img/product-bg.png) left bottom no-repeat;
+    background: linear-gradient(rgba(199, 244, 222, 0.7), rgba(199, 244, 222, 0.2)), url(../img/product-bg.png) left bottom no-repeat;
     background-size: auto;
 }
 
@@ -290,7 +293,7 @@
 
 /*** About ***/
 .video {
-    background: linear-gradient(rgba(136, 180, 78, .85), rgba(136, 180, 78, .85)), url(../img/video-bg.jpg) center center no-repeat;
+    background: linear-gradient(rgba(199, 244, 222, 0.7), rgba(199, 244, 222, 0.7)), url(../img/pexels-jplenio-1103970.jpg) center center no-repeat;
     background-size: cover;
 }
 
@@ -417,10 +420,62 @@
     border-radius: 50px;
 }
 
+/* Whatsapp button */
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 1000; /* Ensures the button is on top of other elements */
+}
+
+.whatsapp-btn i {
+    font-size: 24px; /* Adjust icon size as needed */
+    color: #FFFFFF; /* WhatsApp green color */
+    transition: transform 0.3s ease-in-out;
+    animation: pulse 2s infinite; /* Pulse animation */
+}
+
+.whatsapp-btn i:hover {
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+/* Pulse rings */
+.pulse-ring {
+    position: absolute;
+    border: 2px solid rgba(37, 211, 102, 0.7); /* WhatsApp green color with opacity */
+    border-radius: 50%;
+    animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+
 
 /*** Testimonial ***/
 .testimonial {
-    background: linear-gradient(rgba(136, 180, 78, .85), rgba(136, 180, 78, .85)), url(../img/testimonial-bg.jpg) center center no-repeat;
+    background: linear-gradient(rgba(199, 244, 222, 0.2), rgba(199, 244, 222, 0.2)), url(../img/pexels-karolina-grabowska-4862892.jpg) center center no-repeat;
     background-size: cover;
 }
 
@@ -523,6 +578,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #9AB9FD; 
 }
 
 .top-info {
@@ -531,21 +587,21 @@
 
 .top-info-item {
     margin-right: 15px;
-    color: rgba(255, 255, 255, 0.5);
+    color: #9AB9FD; 
 }
 
 .top-info-item a {
-    color: rgba(255, 255, 255, 0.5);
+    color: #9AB9FD; 
     text-decoration: none;
 }
 
 .icon {
     margin-right: 5px;
-    color: #6c757d;
+    color: #9AB9FD; 
 }
 
 .top-note {
-    color: #6c757d;
+    color: #9AB9FD; 
     white-space: nowrap;
     overflow: hidden;
     position: relative;
@@ -553,7 +609,7 @@
 
 .top-note small {
     display: inline-block;
-    padding-left: 100%;
+    /* padding-left: 100%; */
     animation: marquee 10s linear infinite; /* Adjusted speed */
 }
 
@@ -583,7 +639,7 @@
 }
 
 .social-icon i {
-    color: #007bff;
+    color: #88B44E; /* Change icon color to green */
 }
 
 @media (max-width: 767px) {
@@ -597,7 +653,7 @@
     }
 
     .top-link {
-        display: none;
+        display: flex; /* Make the social icons visible in mobile view */
     }
 
     .top-note {
@@ -606,6 +662,7 @@
         margin-bottom: 10px;
     }
 }
+
 
 /* news image styling */
 .news-image {
