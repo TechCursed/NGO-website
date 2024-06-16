@@ -412,6 +412,10 @@
 
 
 /*** Contact ***/
+
+/* .contact{
+    background-image: url(../img/pexels-karolina-grabowska-4862892.jpg);
+} */
 .contact .btn-square {
     width: 100px;
     height: 100px;
@@ -419,6 +423,7 @@
     background: var(--primary);
     border-radius: 50px;
 }
+
 
 /* Whatsapp button */
 
