@@ -686,3 +686,20 @@
     }
 }
 
+
+
+.testimonial-item {
+    height: 100%; /* Set a fixed height for testimonial items */
+}
+
+.testimonial-item p {
+    margin-bottom: 0; /* Remove default bottom margin for paragraphs */
+}
+
+.testimonial-item img {
+    max-width: 100px; /* Adjust max-width of the image */
+}
+
+.testimonial-item h5 {
+    margin-bottom: 0; /* Remove margin bottom for the name */
+}
