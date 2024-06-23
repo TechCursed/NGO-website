@@ -714,7 +714,6 @@
 .btn-blink {
     animation: blink 1.5s infinite;
 }
-
 /* Adjust positioning of the blinking button */
 @media (min-width: 992px) {
     .btn-blink {
