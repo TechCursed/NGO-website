@@ -705,31 +705,55 @@
 }
 
 /* Style for blinking button */
-@keyframes blink {
-    0% { opacity: 1.0; }
-    50% { opacity: 0.0; }
-    100% { opacity: 1.0; }
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 .btn-blink {
-    animation: blink 1.5s infinite;
+    animation: pulse 2s infinite ease-in-out;
+    transition: all 0.3s ease;
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-/* Adjust positioning of the blinking button */
+
+.btn-blink:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Adjust positioning of the blinking button for large screens */
 @media (min-width: 992px) {
     .btn-blink {
         position: absolute;
-        right: calc(50% - 30px); /* Adjust as needed */
-        top: 50%;
+        right: calc(50% - 30px);
         transform: translateY(-50%);
     }
 }
 
-/* Align button to the right on small screens */
+/* Adjust button size and positioning for small screens */
 @media (max-width: 991.98px) {
     .btn-blink {
-        margin-left: 40%; /* 10% margin on the left */
-        margin-right: 0; /* Reset any right margin */
+        position: static; /* Remove absolute positioning */
+        display: block; /* Make it a block-level element */
+        max-width: 200px; /* Limit the maximum width */
+        padding: 8px 16px; /* Reduced padding */
+        font-size: 14px; /* Smaller font size */
+        margin-left: 40%;
     }
 }
 
-
+/* Further adjustments for very small screens */
+@media (max-width: 575.98px) {
+    .btn-blink {
+        padding: 6px 12px; /* Even smaller padding */
+        font-size: 12px; /* Even smaller font size */
+        max-width: 150px; /* Further limit the maximum width */
+    }
+}
