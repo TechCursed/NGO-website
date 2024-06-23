@@ -705,22 +705,37 @@
 }
 
 /* Style for blinking button */
-@keyframes blink {
-    0% { opacity: 1.0; }
-    50% { opacity: 0.0; }
-    100% { opacity: 1.0; }
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 .btn-blink {
-    animation: blink 1.5s infinite;
+    animation: pulse 2s infinite ease-in-out;
+    transition: all 0.3s ease;
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.btn-blink:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
 
 /* Adjust positioning of the blinking button */
 @media (min-width: 992px) {
     .btn-blink {
         position: absolute;
         right: calc(50% - 30px); /* Adjust as needed */
-        top: 50%;
+        /* top: 50%; */
         transform: translateY(-50%);
     }
 }
@@ -728,8 +743,8 @@
 /* Align button to the right on small screens */
 @media (max-width: 991.98px) {
     .btn-blink {
-        margin-left: 40%; /* 10% margin on the left */
-        margin-right: 0; /* Reset any right margin */
+        margin-left: 35%; 
+        margin-right: 0; 
     }
 }
 
