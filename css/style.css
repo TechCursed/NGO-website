@@ -703,3 +703,34 @@
 .testimonial-item h5 {
     margin-bottom: 0; /* Remove margin bottom for the name */
 }
+
+/* Style for blinking button */
+@keyframes blink {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+.btn-blink {
+    animation: blink 1.5s infinite;
+}
+
+/* Adjust positioning of the blinking button */
+@media (min-width: 992px) {
+    .btn-blink {
+        position: absolute;
+        right: calc(50% - 30px); /* Adjust as needed */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+/* Align button to the right on small screens */
+@media (max-width: 991.98px) {
+    .btn-blink {
+        margin-left: 40%; /* 10% margin on the left */
+        margin-right: 0; /* Reset any right margin */
+    }
+}
+
+
